@@ -1,0 +1,5 @@
+{
+  "name": "GACI - Gestão de Identidade",
+  "description": "Sistema de Gerenciamento de Lista de Espera para Agendamento de Carteiras de Identidade com controle de acesso e prioridades.",
+  "requestFramePermissions": []
+}
