@@ -6,13 +6,8 @@ import {
   Users, LogOut, Search, Plus, List, Map, Archive, X, Menu, Settings, Eye, EyeOff, Save, Edit,
   FileText, FileSpreadsheet, File
 } from 'lucide-react';
-
-// Declare jsPDF globally
-declare global {
-  interface Window {
-    jspdf: any;
-  }
-}
+import { jsPDF } from 'jspdf';
+import 'jspdf-autotable';
 
 // --- Sub-components ---
 
@@ -263,11 +258,7 @@ export default function App() {
     const fileName = `GACI_Auditoria_${new Date().toISOString().split('T')[0]}`;
 
     if (format === 'pdf') {
-       if (!window.jspdf) {
-         alert('Erro ao carregar biblioteca PDF.');
-         return;
-       }
-       const { jsPDF } = window.jspdf;
+       // Using installed jsPDF package
        const doc = new jsPDF();
        doc.text(`Relatório de Auditoria - GACI`, 14, 15);
        doc.setFontSize(10);
